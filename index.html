@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A multi-functional tool for image compression, background removal, and PDF editing. Optimize your files easily and efficiently.">
+    <meta name="keywords" content="image compression, background remover, PDF tools, image optimizer, PDF editor">
+    <meta name="author" content="Your Company Name">
+    <title>Multi-Functional Tool: Image & PDF Tools</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_AD_UNIT_ID" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc; /* Classic beige background */
+            color: #4b3621; /* Dark brown text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        header {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #8b7355; /* Classic brown header */
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        nav {
+            background-color: #6b5a4a; /* Darker brown for the menu bar */
+            width: 100%;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f5f5dc; /* Beige color on hover */
+        }
+        main {
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #8b7355;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #8b7355; /* Classic brown footer */
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .tool-section {
+            margin: 20px 0;
+        }
+        .tool-section h2 {
+            color: #8b7355;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #8b7355;
+            border-radius: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #8b7355; /* Classic brown button */
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #6b5a4a; /* Darker brown on hover */
+        }
+        #imageContainer, #backgroundRemovalContainer, #pdfContainer {
+            margin-top: 20px;
+        }
+        #imageContainer img, #backgroundRemovalContainer img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #8b7355;
+            border-radius: 5px;
+        }
+        .home-content {
+            text-align: left;
+        }
+        .home-content h2 {
+            color: #8b7355;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Multi-Functional Tool</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#compression-tool">Image Compression</a></li>
+            <li><a href="#background-removal">Background Remover</a></li>
+            <li><a href="#pdf-tools">PDF Tools</a></li>
+        </ul>
+    </nav>
+    <main id="home">
+        <!-- Home Page Content -->
+        <section class="home-content">
+            <h2>Welcome to Our Multi-Functional Tool</h2>
+            <p>
+                Our platform offers a variety of tools to help you optimize and edit your files. Whether you need to compress images, 
+                remove backgrounds, or edit PDFs, we've got you covered. Explore the tools below to get started.
+            </p>
+            <h3>Available Tools:</h3>
+            <ul>
+                <li><strong>Image Compression:</strong> Reduce the file size of your images without losing quality.</li>
+                <li><strong>Background Remover:</strong> Remove the background from your images effortlessly.</li>
+                <li><strong>PDF Tools:</strong> Merge, split, and compress PDF files.</li>
+            </ul>
+        </section>
+
+        <!-- Top Ad Unit -->
+        <section id="ad-top">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="YOUR_ADSENSE_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+
+        <!-- Image Compression Tool -->
+        <section id="compression-tool" class="tool-section">
+            <h2>Image Compression Tool</h2>
+            <input type="file" id="imageInput" accept="image/*">
+            <select id="compressionLevel">
+                <option value="0.1">Low Compression</option>
+                <option value="0.5" selected>Medium Compression</option>
+                <option value="0.9">High Compression</option>
+            </select>
+            <button onclick="compressImage()">Compress Image</button>
+            <div id="imageContainer"></div>
+        </section>
+
+        <!-- Background Removal Tool -->
+        <section id="background-removal" class="tool-section">
+            <h2>Background Removal Tool</h2>
+            <input type="file" id="backgroundInput" accept="image/*">
+            <button onclick="removeBackground()">Remove Background</button>
+            <div id="backgroundRemovalContainer"></div>
+        </section>
+
+        <!-- PDF Tools -->
+        <section id="pdf-tools" class="tool-section">
+            <h2>PDF Tools</h2>
+            <input type="file" id="pdfInput" accept="application/pdf" multiple>
+            <button onclick="mergePDFs()">Merge PDFs</button>
+            <button onclick="splitPDF()">Split PDF</button>
+            <div id="pdfContainer"></div>
+        </section>
+
+        <!-- Bottom Ad Unit -->
+        <section id="ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="YOUR_ADSENSE_AD_UNIT_ID"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Image Compression Tool
+        function compressImage() {
+            const file = document.getElementById('imageInput').files[0];
+            const compressionLevel = parseFloat(document.getElementById('compressionLevel').value);
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob(function(blob) {
+                            const url = URL.createObjectURL(blob);
+                            const imgElement = document.createElement('img');
+                            imgElement.src = url;
+                            document.getElementById('imageContainer').innerHTML = '';
+                            document.getElementById('imageContainer').appendChild(imgElement);
+                        }, 'image/jpeg', compressionLevel);
+                    }
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please select an image first.");
+            }
+        }
+
+        // Background Removal Tool (Placeholder - Requires Backend API)
+        function removeBackground() {
+            alert("Background removal feature requires a backend API. Stay tuned!");
+        }
+
+        // PDF Tools (Placeholder - Requires Backend API)
+        function mergePDFs() {
+            alert("PDF merging feature requires a backend API. Stay tuned!");
+        }
+
+        function splitPDF() {
+            alert("PDF splitting feature requires a backend API. Stay tuned!");
+        }
+    </script>
+</body>
+</html>
