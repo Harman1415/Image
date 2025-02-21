@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compress your images online easily with our responsive image compression tool. Optimize images for web use with adjustable compression levels.">
+    <meta name="keywords" content="image compression, optimize images, image tool, web image optimizer">
+    <meta name="author" content="Your Company Name">
+    <title>Classic Image Compression Tool</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=YOUR_ADSENSE_AD_UNIT_ID" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5dc; /* Classic beige background */
+            color: #4b3621; /* Dark brown text */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        header, footer {
+            width: 100%;
+            padding: 20px;
+            background-color: #8b7355; /* Classic brown header/footer */
+            color: #fff;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        main {
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #8b7355;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #compression-tool {
+            margin: 20px 0;
+        }
+        #imageContainer img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border: 1px solid #8b7355;
+            border-radius: 5px;
+        }
+        input, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            max-width: 300px;
+            border: 1px solid #8b7355;
+            border-radius: 5px;
+            font-family: 'Georgia', serif;
+            font-size: 1rem;
+        }
+        button {
+            background-color: #8b7355; /* Classic brown button */
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #6b5a4a; /* Darker brown on hover */
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Classic Image Compression Tool</h1>
+    </header>
+    <main>
+        <!-- Top Ad Unit -->
+        <section id="ad-top">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="YOUR_ADSENSE_AD_UNIT_ID"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+
+        <!-- Compression Tool -->
+        <section id="compression-tool">
+            <input type="file" id="imageInput" accept="image/*">
+            <select id="compressionLevel">
+                <option value="0.1">Low Compression</option>
+                <option value="0.5" selected>Medium Compression</option>
+                <option value="0.9">High Compression</option>
+            </select>
+            <button onclick="compressImage()">Compress Image</button>
+            <div id="imageContainer"></div>
+        </section>
+
+        <!-- Bottom Ad Unit -->
+        <section id="ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="YOUR_ADSENSE_AD_UNIT_ID"
+                 data-ad-slot="0987654321"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function compressImage() {
+            const file = document.getElementById('imageInput').files[0];
+            const compressionLevel = parseFloat(document.getElementById('compressionLevel').value);
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+                        ctx.drawImage(img, 0, 0);
+                        canvas.toBlob(function(blob) {
+                            const url = URL.createObjectURL(blob);
+                            const imgElement = document.createElement('img');
+                            imgElement.src = url;
+                            document.getElementById('imageContainer').innerHTML = '';
+                            document.getElementById('imageContainer').appendChild(imgElement);
+                        }, 'image/jpeg', compressionLevel);
+                    }
+                }
+                reader.readAsDataURL(file);
+            } else {
+                alert("Please select an image first.");
+            }
+        }
+    </script>
+</body>
+</html>
